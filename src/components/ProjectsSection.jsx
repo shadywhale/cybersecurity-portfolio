@@ -9,7 +9,7 @@ const securityProjects = [
     tags: ["Gemini 2.5 Flash", "Node.js", "Express", "DFIR", "Triage"],
     demoUrl: "https://dfir-analyzer.vercel.app/",
     githubUrl: "https://github.com/shadywhale/dfir-analyzer",
-    image: "/src/components/images/dfir.png",
+    image: "/images/dfir.png",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const securityProjects = [
     ],
     demoUrl: "https://logsentinel.netlify.app/",
     githubUrl: "https://github.com/shadywhale/LogSentinel/",
-    image: "/src/components/images/logsentinel.png",
+    image: "/images/logsentinel.png",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const securityProjects = [
     ],
     demoUrl: "https://logrecon.netlify.app/",
     githubUrl: "https://github.com/shadywhale/LogRecon/",
-    image: "/src/components/images/logrecon.png",
+    image: "/images/logrecon.png",
   },
 ];
 
