@@ -6,7 +6,6 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,10 +27,15 @@ app.post('/api/contact', async (req, res) => {
   });
 
   const mailOptions = {
-    from: `Your Website <${process.env.EMAIL_USER}>`,
+    from: `Your Portfolio <${process.env.EMAIL_USER}>`,
     to: 'marthakamau0001@gmail.com',
-    subject: 'New Contact Form Submission from Your Website',
-    html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong></p><p>${message}</p>`,
+    subject: 'New Contact Form Submission from Security Portfolio',
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `,
   };
 
   try {
@@ -39,10 +43,9 @@ app.post('/api/contact', async (req, res) => {
     res.status(200).json({ message: 'Message sent successfully!' });
   } catch (error) {
     console.error('Error sending email:', error);
-    res.status(500).json({ message: 'Failed to send email. Please try again later.' });
+    res.status(500).json({ message: 'Failed to send email. Check Vercel logs for details.' });
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+module.exports = app;
+
